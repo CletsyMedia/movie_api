@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+:root {
+  --primary-color: #016794 ;
+  --secondary-color: #032541;
+  --bxs: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  /* Stylish Scrollbar Styles */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #5bc4b9 #1d1818ce; /* For Firefox */
+}
+
+/* For WebKit (Chrome, Safari, etc.) */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #5bc4b9;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #1d1818ce;
+}
+a{
+  text-decoration: none;
+  color: #016794;
+}
+a:hover{
+  color: #5bc4b9;
+}
+header {
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+header h1 {
+  cursor: pointer;
+  color: #5bc4b9;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.search::placeholder {
+  color: #777;
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+main {
+  padding-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 260px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movieInfo {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.movieInfo h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight:400;
+}
+
+.movieInfo span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius:5px;
+  /* font-weight: bold; */
+}
+
+.movieInfo span.green {
+  color: lightgreen;
+}
+
+.movieInfo span.orange {
+  color: orange;
+}
+
+.movieInfo span.red {
+  color: red;
+}
+
+.overview {
+  background-color: #1d1818ce;
+  padding: 2rem;
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+
+  /* Stylish Scrollbar Styles */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #5bc4b9 #1d1818ce; /* For Firefox */
+
+  /* For WebKit (Chrome, Safari, etc.) */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #5bc4b9;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #1d1818ce;
+  }
+}
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+.footer p {
+  bottom: 1rem;
+  color: #eee;
+}
+@media (max-width: 580px) {
+  header {
+    flex-direction: column;
+  }
+
+  header h1 {
+    padding: 0.5rem 1rem;
+  }
+  main{
+    padding-top:9rem;
+  }
+}
