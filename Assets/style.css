@@ -170,7 +170,32 @@ main {
 .movie:hover .overview {
   transform: translateY(0);
 }
-
+#loadMore{
+  background-color: #032541;
+  padding: 0.7rem 1rem;
+  border:none;
+  outline: none;
+  width: 20%;
+  font-size: 17px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #016794;
+  transition: .5s ease-out;
+}
+#loadMore:hover{
+   color: #5bc4b9;
+   transform: scale(1.05);
+}
+.footer{
+  margin-top:1rem;
+  padding: 0.5rem 1rem;
+  background-color: #032541;
+  text-align: center;
+}
 .footer p {
   bottom: 1rem;
   color: #eee;
