@@ -186,6 +186,7 @@ main {
   color: #016794;
   transition: .5s ease-out;
 }
+
 #loadMore:hover{
    color: #5bc4b9;
    transform: scale(1.05);
