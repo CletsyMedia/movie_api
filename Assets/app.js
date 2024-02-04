@@ -18,8 +18,11 @@ const getClassByRate = (vote) => {
 const showMovies = (movies) => {
   main.innerHTML = "";
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average, overview,release_date } = movie;
+    const { title, poster_path, vote_average, overview, release_date } = movie;
     const releaseYear = release_date ? new Date(movie.release_date).getFullYear() : "";
+
+    // Format vote_average to have approximately 1 decimal point
+    const formattedVoteAverage = vote_average.toFixed(1);
 
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
@@ -31,7 +34,7 @@ const showMovies = (movies) => {
 
     <div class="movieInfo">
       <h3>${title} (${releaseYear})</h3>
-      <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+      <span class="${getClassByRate(vote_average)}">${formattedVoteAverage}</span>
     </div>
     <div class="overview">
       <h3>Overview</h3>
@@ -41,6 +44,7 @@ const showMovies = (movies) => {
     main.appendChild(movieElement);
   });
 };
+
 
 const getMovies = async (url) => {
   try {
